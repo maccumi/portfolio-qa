@@ -1,22 +1,11 @@
 /* ==========================================================================
-   SCRIPT.JS - PORTFOLIO INTERACTIVITY & QA EMULATION (REVISION 3)
+   SCRIPT.JS - PORTFOLIO INTERACTIVITY & QA EMULATION (REVISION 4)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================================================
-       1. CURSOR GLOW TRAIL EFFECT
-       ========================================================================== */
-    const cursorGlow = document.getElementById('cursor-glow');
-    
-    document.addEventListener('mousemove', (e) => {
-        // Center the glow on the cursor
-        cursorGlow.style.left = `${e.clientX}px`;
-        cursorGlow.style.top = `${e.clientY}px`;
-    });
-
-    /* ==========================================================================
-       2. SCROLL PROGRESS & STICKY NAVBAR & SCROLLSPY (PHOTO 5)
+       1. SCROLL PROGRESS & STICKY NAVBAR & SCROLLSPY (PHOTO 5)
        ========================================================================== */
     const scrollProgress = document.getElementById('scroll-progress');
     const navbar = document.getElementById('navbar');
@@ -71,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       3. SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER)
+       2. SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER)
        ========================================================================== */
     const revealElements = document.querySelectorAll('.reveal');
 
@@ -89,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealObserver.observe(el));
 
     /* ==========================================================================
-       4. INTERACTIVE SKILLS INSPECTOR (SKILL MAP & PHOTO 3)
+       3. INTERACTIVE SKILLS INSPECTOR (SKILL MAP & PHOTO 3)
        ========================================================================== */
     const skillInspector = document.getElementById('skills-inspector');
     const inspectorTitle = document.getElementById('inspector-skill-title');
@@ -198,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       6. QA INTERACTIVE BUG INJECTOR & HOTFIX
+       4. QA INTERACTIVE BUG INJECTOR & HOTFIX
        ========================================================================== */
     const btnInjectBug = document.getElementById('btn-inject-bug');
     const bugsFoundCount = document.getElementById('bugs-found-count');
