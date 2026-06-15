@@ -1064,16 +1064,18 @@ body.buggy-mode #hero-main-title {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+    margin-top: 14px;
+    padding-left: 6px;
 }
 
 /* Bullet list task item with proper padding offset (Photo 3) */
 .project-tasks li {
     position: relative;
-    padding-left: 24px;
-    font-size: 12.5px;
+    padding-left: 26px;
+    font-size: 13px;
     color: var(--text-muted);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Bullet arrow centered and padded (Photo 3) */
@@ -1081,7 +1083,7 @@ body.buggy-mode #hero-main-title {
     content: "→";
     position: absolute;
     left: 0;
-    top: 1px;
+    top: 2px;
     color: var(--accent);
     font-family: var(--font-mono);
     font-weight: bold;
