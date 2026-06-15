@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мошков Артём — QA Engineer Portfolio</title>
-    <meta name="description" content="Портфолио QA Engineer. Специализируюсь на ручном, интеграционном и API тестировании. Примеры проектов, тест-кейсы и интерактивные инструменты.">
+    <meta name="description" content="Портфолио QA Engineer. Специализируюсь на ручном, интеграционном и API тестировании. Примеры проектов и опыт отладки сложных систем.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,24 +36,7 @@
                 <li><a href="#contacts" class="nav-link">Контакты</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
-                    <!-- Sun/Moon icons inside stylesheet or inline -->
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <a href="#contacts" class="download-btn">Скачать Резюме</a>
+                <a href="#contacts" class="download-btn">Контакты</a>
             </div>
         </div>
     </nav>
@@ -146,13 +129,10 @@
             <div class="about-grid">
                 <div class="about-info reveal">
                     <p class="paragraph-large">
-                        Я — QA-инженер с сильным аналитическим мышлением и техническим бэкграундом. Специализируюсь на функциональном и интеграционном тестировании веб-приложений. Моя главная цель — сделать так, чтобы пользователи получали качественный и стабильный продукт, а бизнес не нес репутационные и финансовые потери из-за дефектов.
+                        Инженер с 3-летним опытом в отладке оборудования, настройке программного обеспечения и сетевой инфраструктуры. Обладаю системным мышлением и вниманием к деталям, сформированными в процессе отладки 3D-принтеров, модификации открытого ПО (Orca Slicer) и администрирования сети из 40+ устройств. Стремлюсь применить свой практический опыт поиска и устранения неисправностей в сфере тестирования программного обеспечения и облачных решений.
                     </p>
                     <p>
                         Изучал информационные системы в университете, что дает мне глубокое понимание того, как устроены клиент-серверная архитектура, базы данных и операционные системы. В работе ценю структурированность, дотошность в проверках и умение находить общий язык с разработчиками для быстрого решения проблем.
-                    </p>
-                    <p>
-                        Всегда стремлюсь не просто кликать по интерфейсу, а разбираться в первопричинах ошибок через чтение системных логов, отслеживание трафика в DevTools и прямые проверки в БД.
                     </p>
                 </div>
                 
@@ -248,7 +228,7 @@
                     </div>
                 </div>
 
-                <!-- Technical -->
+                <!-- Technical & Soft -->
                 <div class="skills-column">
                     <h3 class="skills-cat-title">Technical</h3>
                     <div class="skills-list">
@@ -287,6 +267,17 @@
                     <p class="inspector-desc" id="inspector-skill-desc">Детальное описание опыта использования и уровня владения появится здесь при наведении на конкретную карточку навыка.</p>
                 </div>
             </div>
+            
+            <!-- Soft Skills Row -->
+            <div class="soft-skills-container reveal">
+                <h3 class="soft-skills-title">Софт-скиллы / <em>Soft Skills</em></h3>
+                <div class="soft-tags">
+                    <span class="soft-tag-item">Системное мышление</span>
+                    <span class="soft-tag-item">Аналитический склад ума</span>
+                    <span class="soft-tag-item">Внимание к деталям</span>
+                    <span class="soft-tag-item">Технические коммуникации</span>
+                </div>
+            </div>
         </section>
 
         <!-- EXPERIENCE SECTION -->
@@ -303,10 +294,6 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
                         <div class="timeline-company">Digital Systems Lab</div>
-                        <div class="timeline-period">
-                            <span class="badge badge-date">2024 — наст. время</span>
-                            <span class="badge badge-duration">Текущее место</span>
-                        </div>
                     </div>
                     <div class="timeline-details">
                         <h3 class="timeline-role">QA Engineer (Тестировщик ПО)</h3>
@@ -338,32 +325,51 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-header">
-                        <div class="timeline-company">WebTech Solution</div>
-                        <div class="timeline-period">
-                            <span class="badge badge-date">2023 — 2024</span>
-                            <span class="badge badge-duration">1 год</span>
-                        </div>
+                        <div class="timeline-company">Студия 3D-технологий и производства (ООО «Название компании»)</div>
                     </div>
                     <div class="timeline-details">
-                        <h3 class="timeline-role">Junior QA Engineer (Тестировщик веб-приложений)</h3>
+                        <h3 class="timeline-role">Инженер по сетевой интеграции и отладке оборудования</h3>
                         <p class="timeline-desc">
-                            Тестирование клиентских сайтов, интернет-магазинов и посадочных страниц на этапе разработки и сдачи заказчикам.
+                            Комплексная диагностика, кастомизация ПО, администрирование сетевой инфраструктуры и систематическая отладка оборудования.
                         </p>
-                        <ul class="bullet-list">
-                            <li><strong>Функциональное тестирование:</strong> Проверка корректности работы форм обратной связи, корзины, фильтрации товаров, поиска и личного кабинета.</li>
-                            <li><strong>Кроссбраузерное и мобильное тестирование:</strong> Проверка верстки и UX на различных разрешениях экранов, операционных системах (Windows, macOS, iOS, Android) и браузерах (Chrome, Firefox, Safari, Edge).</li>
-                            <li><strong>Тестирование баз данных:</strong> Написание SQL-запросов (SELECT, JOIN, WHERE) для проверки корректности сохранения данных о заказах и пользователях в БД MySQL.</li>
-                            <li><strong>Анализ логов:</strong> Работа в Linux-консоли для сбора и анализа ошибок в логах веб-сервера Apache/Nginx при возникновении сбоев (ошибки 500, таймауты).</li>
-                        </ul>
-                        <div class="timeline-results">
-                            <strong>Результаты:</strong> Успешно протестировал и подготовил к запуску более 8 крупных интернет-магазинов, снизил количество пропущенных багов верстки на мобильных экранах до нуля, разработал шаблоны чек-листов для типовых форм и модулей.
+                        
+                        <div class="sub-timeline-block">
+                            <h4 class="sub-block-title">Отладка и тестирование оборудования</h4>
+                            <ul class="bullet-list">
+                                <li><strong>Диагностика и отладка 3D-принтеров:</strong> Систематический поиск и устранение дефектов печати, калибровка, выявление причин сбоев. Много аппаратной и программной отладки принтеров через логи.</li>
+                                <li><strong>Тестовые сценарии:</strong> Разработка и следование чек-листам для проверки работоспособности оборудования после ремонта и настройки.</li>
+                                <li><strong>База знаний:</strong> Документирование найденных проблем и решений, формирование базы знаний для оптимизации процесса поддержки.</li>
+                            </ul>
                         </div>
+                        
+                        <div class="sub-timeline-block">
+                            <h4 class="sub-block-title">Сетевое администрирование и мониторинг</h4>
+                            <ul class="bullet-list">
+                                <li><strong>Сетевое администрирование:</strong> Развертывание локальной сети и мониторинг стабильности для <strong>40+ подключённых 3D-принтеров</strong> в едином сетевом пространстве (TCP/IP).</li>
+                                <li><strong>Мониторинг инфраструктуры:</strong> Использование связки <strong>Prometheus + Grafana</strong> для сбора метрик производительности и стабильности подключений устройств в реальном времени.</li>
+                                <li><strong>Анализ системных логов:</strong> Сбор и парсинг логов с сетевых интерфейсов и Linux-хостов для диагностики сбоев и расследования сетевых таймаутов.</li>
+                            </ul>
+                        </div>
+
+                        <div class="sub-timeline-block">
+                            <h4 class="sub-block-title">Модификация программного обеспечения</h4>
+                            <ul class="bullet-list">
+                                <li><strong>Кастомизация Orca Slicer:</strong> Кастомизация открытого исходного кода Orca Slicer (open-source): анализ исходного кода, внесение изменений, тестирование модификаций на реальном оборудовании, переписывание слайсеров для нарезки моделей.</li>
+                                <li><strong>Верификация ПО:</strong> Верификация корректности работы изменённого ПО в различных сценариях печати, работа с кастомными прошивками.</li>
+                                <li><strong>Параметрическое проектирование:</strong> Написание алгоритмов автоматизации в <strong>Rhinoceros + Grasshopper</strong> для генерации геометрических моделей и управления тест-данными (TDM).</li>
+                                <li><strong>Контроль версий:</strong> Работа с системами контроля версий (Git) для отслеживания изменений и ведения репозитория.</li>
+                            </ul>
+                        </div>
+
                         <div class="tech-tags">
-                            <span class="tech-tag">Web Testing</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">DevTools</span>
-                            <span class="tech-tag">Linux</span>
-                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">TCP/IP Networking</span>
+                            <span class="tech-tag">Prometheus</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">Linux Logs</span>
+                            <span class="tech-tag">Orca Slicer</span>
+                            <span class="tech-tag">Rhinoceros 3D</span>
+                            <span class="tech-tag">Grasshopper</span>
+                            <span class="tech-tag">Git</span>
                         </div>
                     </div>
                 </div>
@@ -399,7 +405,7 @@
                             <li>Создано и задокументировано 25 детальных баг-репортов с логами и скриншотами.</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://github.com" target="_blank" class="project-link">
+                            <a href="https://github.com/maccumi" target="_blank" class="project-link">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                                 Тест-кейсы на GitHub
                             </a>
@@ -427,7 +433,7 @@
                             <li>Настроены переменные окружения (Environment) для легкого переключения между Dev, QA и Stage средами.</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://github.com" target="_blank" class="project-link">
+                            <a href="https://github.com/maccumi" target="_blank" class="project-link">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                                 Коллекции Postman
                             </a>
@@ -435,87 +441,30 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Database Testing + Sandbox -->
-                <div class="project-card reveal project-card-wide">
+                <!-- Project 3: Database Testing (No sandbox) -->
+                <div class="project-card reveal">
                     <div class="project-header">
                         <div class="project-meta">
                             <span class="project-type">Database Validation</span>
-                            <span class="project-status">Interactive Sandbox</span>
+                            <span class="project-status">Completed</span>
                         </div>
-                        <h3 class="project-title">Тестирование БД и SQL-песочница</h3>
+                        <h3 class="project-title">Тестирование БД и SQL-валидация</h3>
                     </div>
                     <div class="project-body">
                         <p class="project-desc">
-                            Валидация данных в реляционных базах с помощью SQL-запросов. Ниже представлена интерактивная песочница с тестовой базой данных интернет-магазина. Вы можете выбрать запрос и запустить его.
+                            Валидация данных в реляционных базах с помощью SQL-запросов. Проверка согласованности структуры данных и корректности выполнения бизнес-операций.
                         </p>
-                        
-                        <!-- Interactive SQL Sandbox -->
-                        <div class="sql-sandbox">
-                            <div class="sandbox-controls">
-                                <div class="query-select-wrapper">
-                                    <label for="sql-query-select">Выберите тест-кейс (SQL-запрос):</label>
-                                    <select id="sql-query-select">
-                                        <option value="q1">1. Список всех пользователей (Проверка таблицы Users)</option>
-                                        <option value="q2">2. Список заказов с суммой > 5000 (Фильтрация и сортировка)</option>
-                                        <option value="q3">3. Пользователи и их заказы (Объединение таблиц через JOIN)</option>
-                                        <option value="q4">4. Агрегация: Количество заказов и общая сумма по каждому статусу (GROUP BY)</option>
-                                    </select>
-                                </div>
-                                <button class="btn btn-sql-execute" id="btn-sql-run">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon">
-                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                    </svg>
-                                    Выполнить
-                                </button>
-                            </div>
-                            
-                            <div class="sandbox-editor">
-                                <div class="editor-header">
-                                    <span class="editor-title">SQL Query Editor</span>
-                                </div>
-                                <div class="editor-code">
-                                    <pre><code id="sql-editor-display">SELECT * FROM users;</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="sandbox-results">
-                                <div class="results-header">
-                                    <span class="results-title">Результат выполнения (JSON Output)</span>
-                                </div>
-                                <div class="results-table-wrapper" id="sql-results-container">
-                                    <!-- Table will be rendered here dynamically -->
-                                    <table class="sql-table">
-                                        <thead>
-                                            <tr>
-                                                <th>id</th>
-                                                <th>name</th>
-                                                <th>email</th>
-                                                <th>registration_date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Алексей Иванов</td>
-                                                <td>ivanov@email.com</td>
-                                                <td>2026-01-10</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Елена Петрова</td>
-                                                <td>petrova@email.com</td>
-                                                <td>2026-02-15</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Дмитрий Сидоров</td>
-                                                <td>sidorov@email.com</td>
-                                                <td>2026-03-01</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                        <ul class="project-tasks">
+                            <li>Написаны сложные проверочные SQL-запросы для валидации данных после прохождения сценариев на клиенте (с использованием LEFT/INNER JOIN).</li>
+                            <li>Составлены скрипты очистки тестовых баз данных от мусора и дубликатов перед запуском регрессионных наборов тестов.</li>
+                            <li>Выполнена валидация структуры связей БД интернет-магазина (внешние ключи, уникальные индексы).</li>
+                            <li>Проверена целостность данных при выполнении транзакций оформления заказов.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/maccumi" target="_blank" class="project-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                Примеры SQL на GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -533,7 +482,6 @@
             <div class="edu-grid reveal">
                 <div class="edu-card">
                     <div class="edu-meta">
-                        <span class="edu-year">2020 — 2024</span>
                         <span class="badge badge-edu">Бакалавриат</span>
                     </div>
                     <h3 class="edu-institution">Южный федеральный университет (ЮФУ)</h3>
@@ -562,17 +510,17 @@
                     </p>
                     
                     <div class="contacts-list">
-                        <a href="mailto:moshkov.artem@email.com" class="contact-item">
+                        <a href="mailto:artem.moshkov.1903@gmail.com" class="contact-item">
                             <span class="contact-label">Email</span>
-                            <span class="contact-value">moshkov.artem@email.com</span>
+                            <span class="contact-value">artem.moshkov.1903@gmail.com</span>
                         </a>
-                        <a href="https://t.me/moshkov_artem" target="_blank" class="contact-item">
+                        <a href="https://t.me/maccumi" target="_blank" class="contact-item">
                             <span class="contact-label">Telegram</span>
-                            <span class="contact-value">@moshkov_artem</span>
+                            <span class="contact-value">@maccumi</span>
                         </a>
-                        <a href="https://github.com" target="_blank" class="contact-item">
+                        <a href="https://github.com/maccumi" target="_blank" class="contact-item">
                             <span class="contact-label">GitHub</span>
-                            <span class="contact-value">github.com/moshkov-artem</span>
+                            <span class="contact-value">github.com/maccumi</span>
                         </a>
                         <div class="contact-item">
                             <span class="contact-label">Локация</span>
