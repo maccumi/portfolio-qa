@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мошков Артём — QA Engineer Portfolio</title>
+    <meta name="description" content="Портфолио QA Engineer. Специализируюсь на ручном, интеграционном и API тестировании. Примеры проектов, тест-кейсы и интерактивные инструменты.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    
+    <!-- Cursor Glow (follows cursor) -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+    
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="logo">
+                <span class="logo-dot"></span>
+                <span class="logo-text">MOSHKOV.QA</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">О себе</a></li>
+                <li><a href="#skills" class="nav-link">Навыки</a></li>
+                <li><a href="#experience" class="nav-link">Опыт</a></li>
+                <li><a href="#projects" class="nav-link">Проекты</a></li>
+                <li><a href="#education" class="nav-link">Образование</a></li>
+                <li><a href="#contacts" class="nav-link">Контакты</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
+                    <!-- Sun/Moon icons inside stylesheet or inline -->
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="#contacts" class="download-btn">Скачать Резюме</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-meta reveal">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Доступен для тестирования / Available for QA</span>
+                </div>
+                
+                <h1 class="hero-title reveal" id="hero-main-title">
+                    <span class="line"><span>Артём</span></span>
+                    <span class="line"><span><em>Мошков</em></span></span>
+                </h1>
+                
+                <p class="hero-subtitle reveal">
+                    Инженер по тестированию программного обеспечения (<strong>QA Engineer</strong>). Специализируюсь на ручном, интеграционном и API тестировании веб-приложений. Обеспечиваю высокое качество релизов через глубокий анализ требований, грамотный тест-дизайн и автоматизированные проверки.
+                </p>
+                
+                <div class="hero-tags reveal">
+                    <span class="tag">Manual Testing</span>
+                    <span class="tag">API Testing</span>
+                    <span class="tag">Postman</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">DevTools</span>
+                </div>
+                
+                <div class="hero-cta reveal">
+                    <a href="#projects" class="btn btn-primary">Посмотреть проекты</a>
+                    <a href="#contacts" class="btn">Контакты</a>
+                </div>
+            </div>
+            
+            <!-- QA Interactive Dashboard in Hero -->
+            <div class="hero-dashboard-wrapper reveal" data-delay="2">
+                <div class="qa-dashboard" id="qa-dashboard">
+                    <div class="dashboard-header">
+                        <span class="dashboard-title"><span class="terminal-prompt">$</span> qa-debugger --status</span>
+                        <div class="dashboard-controls">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                    </div>
+                    <div class="dashboard-body">
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <span class="metric-label">Текущий статус</span>
+                                <span class="metric-value status-active" id="qa-status-text">Ready for Prod</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">Найдено багов</span>
+                                <span class="metric-value" id="bugs-found-count">0</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">Тесты пройдены</span>
+                                <span class="metric-value text-accent" id="tests-passed-percent">100%</span>
+                            </div>
+                        </div>
+                        <div class="dashboard-actions">
+                            <button class="btn btn-dashboard-action" id="btn-inject-bug">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                                    <path d="M18 6L6 18M6 6l12 12"></path>
+                                </svg>
+                                Внедрить баг (Inject Bug)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-hint reveal" data-delay="4">
+                <span>ЛИСТАЙТЕ ВНИЗ</span>
+                <div class="arrow"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-section">
+            <div class="section-head reveal">
+                <span class="num">01.</span>
+                <h2>О себе / <em>About</em></h2>
+                <div class="head-line"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-info reveal">
+                    <p class="paragraph-large">
+                        Я — QA-инженер с сильным аналитическим мышлением и техническим бэкграундом. Специализируюсь на функциональном и интеграционном тестировании веб-приложений. Моя главная цель — сделать так, чтобы пользователи получали качественный и стабильный продукт, а бизнес не нес репутационные и финансовые потери из-за дефектов.
+                    </p>
+                    <p>
+                        Изучал информационные системы в университете, что дает мне глубокое понимание того, как устроены клиент-серверная архитектура, базы данных и операционные системы. В работе ценю структурированность, дотошность в проверках и умение находить общий язык с разработчиками для быстрого решения проблем.
+                    </p>
+                    <p>
+                        Всегда стремлюсь не просто кликать по интерфейсу, а разбираться в первопричинах ошибок через чтение системных логов, отслеживание трафика в DevTools и прямые проверки в БД.
+                    </p>
+                </div>
+                
+                <div class="about-stats reveal" data-delay="2">
+                    <div class="stat-card">
+                        <span class="stat-num">3+</span>
+                        <span class="stat-label">Года обучения и практики в IT</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">15+</span>
+                        <span class="stat-label">Проверенных релизов систем</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num">100+</span>
+                        <span class="stat-label">Написанных тест-кейсов и чек-листов</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="skills-section">
+            <div class="section-head reveal">
+                <span class="num">02.</span>
+                <h2>Навыки / <em>Skills</em></h2>
+                <div class="head-line"></div>
+            </div>
+            
+            <div class="skills-grid reveal">
+                <!-- Testing Skills -->
+                <div class="skills-column">
+                    <h3 class="skills-cat-title">Testing</h3>
+                    <div class="skills-list">
+                        <div class="skill-item-interactive" data-skill="manual">
+                            <span class="skill-name">Manual Testing</span>
+                            <span class="skill-level">Глубоко</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="functional">
+                            <span class="skill-name">Functional Testing</span>
+                            <span class="skill-level">Глубоко</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="regression">
+                            <span class="skill-name">Regression Testing</span>
+                            <span class="skill-level">Практика</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="smoke">
+                            <span class="skill-name">Smoke Testing</span>
+                            <span class="skill-level">Практика</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="exploratory">
+                            <span class="skill-name">Exploratory Testing</span>
+                            <span class="skill-level">Практика</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="ui">
+                            <span class="skill-name">UI Testing</span>
+                            <span class="skill-level">Глубоко</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="api">
+                            <span class="skill-name">API Testing</span>
+                            <span class="skill-level">Глубоко</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skills-column">
+                    <h3 class="skills-cat-title">Tools</h3>
+                    <div class="skills-list">
+                        <div class="skill-item-interactive" data-skill="jira">
+                            <span class="skill-name">Jira</span>
+                            <span class="skill-level">Базово</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="postman">
+                            <span class="skill-name">Postman</span>
+                            <span class="skill-level">Глубоко</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="testrail">
+                            <span class="skill-name">TestRail</span>
+                            <span class="skill-level">Практика</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="devtools">
+                            <span class="skill-name">Chrome DevTools</span>
+                            <span class="skill-level">Глубоко</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="git">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-level">Практика</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="sql_tool">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-level">Глубоко</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical -->
+                <div class="skills-column">
+                    <h3 class="skills-cat-title">Technical</h3>
+                    <div class="skills-list">
+                        <div class="skill-item-interactive" data-skill="html_css">
+                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-level">Практика</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="js_basics">
+                            <span class="skill-name">JavaScript basics</span>
+                            <span class="skill-level">Практика</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="rest_api">
+                            <span class="skill-name">REST API</span>
+                            <span class="skill-level">Глубоко</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="sql_queries">
+                            <span class="skill-name">SQL queries</span>
+                            <span class="skill-level">Глубоко</span>
+                        </div>
+                        <div class="skill-item-interactive" data-skill="linux">
+                            <span class="skill-name">Linux basics</span>
+                            <span class="skill-level">Практика</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Skill Inspector Box -->
+            <div class="skills-inspector reveal" id="skills-inspector">
+                <div class="inspector-header">
+                    <span class="inspector-label"><span class="terminal-prompt">&gt;</span> Skill Inspector</span>
+                    <span class="inspector-help">Наведите курсор на любой навык выше для инспекции</span>
+                </div>
+                <div class="inspector-body">
+                    <h4 class="inspector-title" id="inspector-skill-title">Выберите навык</h4>
+                    <p class="inspector-desc" id="inspector-skill-desc">Детальное описание опыта использования и уровня владения появится здесь при наведении на конкретную карточку навыка.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="experience-section">
+            <div class="section-head reveal">
+                <span class="num">03.</span>
+                <h2>Опыт работы / <em>Experience</em></h2>
+                <div class="head-line"></div>
+            </div>
+            
+            <div class="timeline reveal">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <div class="timeline-company">Digital Systems Lab</div>
+                        <div class="timeline-period">
+                            <span class="badge badge-date">2024 — наст. время</span>
+                            <span class="badge badge-duration">Текущее место</span>
+                        </div>
+                    </div>
+                    <div class="timeline-details">
+                        <h3 class="timeline-role">QA Engineer (Тестировщик ПО)</h3>
+                        <p class="timeline-desc">
+                            Работа в продуктовой команде над развитием и стабилизацией веб-сервисов и внутренней CRM-системы.
+                        </p>
+                        <ul class="bullet-list">
+                            <li><strong>Анализ требований и спецификаций:</strong> Выявление логических нестыковок и двусмысленностей на ранних этапах проектирования фич, предотвращение дефектов до написания кода.</li>
+                            <li><strong>Тест-дизайн и документация:</strong> Проектирование тест-кейсов и чек-листов для нового функционала, актуализация регрессионного набора тестов в TestRail.</li>
+                            <li><strong>Ручное тестирование (Web UI):</strong> Проведение функционального, смоук-, интеграционного и регрессионного тестирования веб-клиента. Локализация ошибок верстки и логики с помощью DevTools.</li>
+                            <li><strong>Тестирование REST API:</strong> Валидация бэкенд-эндпоинтов в Postman, создание коллекций запросов с автоматическими скриптами проверок (статус-коды, тело ответа, схемы данных JSON).</li>
+                            <li><strong>Управление дефектами:</strong> Оформление понятных и воспроизводимых баг-репортов в Jira, сопровождение дефектов на всех этапах жизненного цикла, верификация хотфиксов.</li>
+                        </ul>
+                        <div class="timeline-results">
+                            <strong>Результаты:</strong> Оптимизировал тестовое покрытие критических модулей на 35%, повысил скорость прогона регрессионных тестов за счет систематизации чек-листов, обеспечил бесперебойный релизный цикл с частотой 2 обновления в неделю.
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">API Testing</span>
+                            <span class="tech-tag">Postman</span>
+                            <span class="tech-tag">DevTools</span>
+                            <span class="tech-tag">Jira</span>
+                            <span class="tech-tag">TestRail</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <div class="timeline-company">WebTech Solution</div>
+                        <div class="timeline-period">
+                            <span class="badge badge-date">2023 — 2024</span>
+                            <span class="badge badge-duration">1 год</span>
+                        </div>
+                    </div>
+                    <div class="timeline-details">
+                        <h3 class="timeline-role">Junior QA Engineer (Тестировщик веб-приложений)</h3>
+                        <p class="timeline-desc">
+                            Тестирование клиентских сайтов, интернет-магазинов и посадочных страниц на этапе разработки и сдачи заказчикам.
+                        </p>
+                        <ul class="bullet-list">
+                            <li><strong>Функциональное тестирование:</strong> Проверка корректности работы форм обратной связи, корзины, фильтрации товаров, поиска и личного кабинета.</li>
+                            <li><strong>Кроссбраузерное и мобильное тестирование:</strong> Проверка верстки и UX на различных разрешениях экранов, операционных системах (Windows, macOS, iOS, Android) и браузерах (Chrome, Firefox, Safari, Edge).</li>
+                            <li><strong>Тестирование баз данных:</strong> Написание SQL-запросов (SELECT, JOIN, WHERE) для проверки корректности сохранения данных о заказах и пользователях в БД MySQL.</li>
+                            <li><strong>Анализ логов:</strong> Работа в Linux-консоли для сбора и анализа ошибок в логах веб-сервера Apache/Nginx при возникновении сбоев (ошибки 500, таймауты).</li>
+                        </ul>
+                        <div class="timeline-results">
+                            <strong>Результаты:</strong> Успешно протестировал и подготовил к запуску более 8 крупных интернет-магазинов, снизил количество пропущенных багов верстки на мобильных экранах до нуля, разработал шаблоны чек-листов для типовых форм и модулей.
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Web Testing</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">DevTools</span>
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="projects-section">
+            <div class="section-head reveal">
+                <span class="num">04.</span>
+                <h2>QA Проекты / <em>Projects</em></h2>
+                <div class="head-line"></div>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1: Web App Testing -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-type">Web Testing Case</span>
+                            <span class="project-status">Completed</span>
+                        </div>
+                        <h3 class="project-title">Тестирование Web-приложения (E-commerce)</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-desc">
+                            Комплексный аудит качества и функциональное тестирование прототипа интернет-магазина техники.
+                        </p>
+                        <ul class="project-tasks">
+                            <li>Составлен тест-план и выполнена декомпозиция требований.</li>
+                            <li>Разработан набор из 80+ тест-кейсов (функциональное тестирование корзины, авторизации, поиска).</li>
+                            <li>Проведено ручное тестирование с использованием техник тест-дизайна (эквивалентное разделение, граничные значения).</li>
+                            <li>Создано и задокументировано 25 детальных баг-репортов с логами и скриншотами.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com" target="_blank" class="project-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                Тест-кейсы на GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: API Testing -->
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-type">REST API testing</span>
+                            <span class="project-status">Completed</span>
+                        </div>
+                        <h3 class="project-title">Интеграционное тестирование API в Postman</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-desc">
+                            Создание тестовых коллекций в Postman для автоматизированной проверки эндпоинтов REST API сервиса бронирования.
+                        </p>
+                        <ul class="project-tasks">
+                            <li>Спроектированы сценарии интеграционного тестирования (CRUD-цепочка создания, получения, редактирования и удаления сущности).</li>
+                            <li>Написаны автоматические тесты на JavaScript для валидации статус-кодов ответов и времени отклика.</li>
+                            <li>Настроена JSON-schema валидация для проверки структуры ответа от бэкенда.</li>
+                            <li>Настроены переменные окружения (Environment) для легкого переключения между Dev, QA и Stage средами.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com" target="_blank" class="project-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                Коллекции Postman
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Database Testing + Sandbox -->
+                <div class="project-card reveal project-card-wide">
+                    <div class="project-header">
+                        <div class="project-meta">
+                            <span class="project-type">Database Validation</span>
+                            <span class="project-status">Interactive Sandbox</span>
+                        </div>
+                        <h3 class="project-title">Тестирование БД и SQL-песочница</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-desc">
+                            Валидация данных в реляционных базах с помощью SQL-запросов. Ниже представлена интерактивная песочница с тестовой базой данных интернет-магазина. Вы можете выбрать запрос и запустить его.
+                        </p>
+                        
+                        <!-- Interactive SQL Sandbox -->
+                        <div class="sql-sandbox">
+                            <div class="sandbox-controls">
+                                <div class="query-select-wrapper">
+                                    <label for="sql-query-select">Выберите тест-кейс (SQL-запрос):</label>
+                                    <select id="sql-query-select">
+                                        <option value="q1">1. Список всех пользователей (Проверка таблицы Users)</option>
+                                        <option value="q2">2. Список заказов с суммой > 5000 (Фильтрация и сортировка)</option>
+                                        <option value="q3">3. Пользователи и их заказы (Объединение таблиц через JOIN)</option>
+                                        <option value="q4">4. Агрегация: Количество заказов и общая сумма по каждому статусу (GROUP BY)</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-sql-execute" id="btn-sql-run">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="btn-icon">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                    Выполнить
+                                </button>
+                            </div>
+                            
+                            <div class="sandbox-editor">
+                                <div class="editor-header">
+                                    <span class="editor-title">SQL Query Editor</span>
+                                </div>
+                                <div class="editor-code">
+                                    <pre><code id="sql-editor-display">SELECT * FROM users;</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="sandbox-results">
+                                <div class="results-header">
+                                    <span class="results-title">Результат выполнения (JSON Output)</span>
+                                </div>
+                                <div class="results-table-wrapper" id="sql-results-container">
+                                    <!-- Table will be rendered here dynamically -->
+                                    <table class="sql-table">
+                                        <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>name</th>
+                                                <th>email</th>
+                                                <th>registration_date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Алексей Иванов</td>
+                                                <td>ivanov@email.com</td>
+                                                <td>2026-01-10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Елена Петрова</td>
+                                                <td>petrova@email.com</td>
+                                                <td>2026-02-15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Дмитрий Сидоров</td>
+                                                <td>sidorov@email.com</td>
+                                                <td>2026-03-01</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="education-section">
+            <div class="section-head reveal">
+                <span class="num">05.</span>
+                <h2>Образование / <em>Education</em></h2>
+                <div class="head-line"></div>
+            </div>
+            
+            <div class="edu-grid reveal">
+                <div class="edu-card">
+                    <div class="edu-meta">
+                        <span class="edu-year">2020 — 2024</span>
+                        <span class="badge badge-edu">Бакалавриат</span>
+                    </div>
+                    <h3 class="edu-institution">Южный федеральный университет (ЮФУ)</h3>
+                    <p class="edu-location">Таганрог, Россия</p>
+                    <p class="edu-specialty">Информационные системы и технологии</p>
+                    <p class="edu-desc">
+                        Получил базовые академические знания по проектированию баз данных, администрированию операционных систем Linux, компьютерным сетям, веб-технологиям и основам алгоритмизации.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTS SECTION -->
+        <section id="contacts" class="contacts-section">
+            <div class="section-head reveal">
+                <span class="num">06.</span>
+                <h2>Контакты / <em>Contacts</em></h2>
+                <div class="head-line"></div>
+            </div>
+            
+            <div class="contacts-grid-wrapper">
+                <div class="contacts-info reveal">
+                    <h3 class="contacts-title">Давайте обсудим сотрудничество</h3>
+                    <p class="contacts-desc">
+                        Я открыт для вакансий QA Engineer (Manual / QA Automation Junior) на удаленный формат работы или в офис в Таганроге/Ростове-на-Дону. Готов пройти собеседование и выполнить тестовое задание.
+                    </p>
+                    
+                    <div class="contacts-list">
+                        <a href="mailto:moshkov.artem@email.com" class="contact-item">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">moshkov.artem@email.com</span>
+                        </a>
+                        <a href="https://t.me/moshkov_artem" target="_blank" class="contact-item">
+                            <span class="contact-label">Telegram</span>
+                            <span class="contact-value">@moshkov_artem</span>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="contact-item">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">github.com/moshkov-artem</span>
+                        </a>
+                        <div class="contact-item">
+                            <span class="contact-label">Локация</span>
+                            <span class="contact-value">Таганрог, Россия</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contacts-action reveal" data-delay="2">
+                    <button class="btn btn-primary btn-large btn-print" onclick="window.print()">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        Сохранить резюме (PDF)
+                    </button>
+                    <p class="print-note">Версия для печати оптимизирована под формат A4: скрываются интерактивные элементы и применяется лаконичный стиль.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="copyright">&copy; 2026 Артём Мошков. Все права защищены.</p>
+            <p class="status-note">Code coverage: 100% | Quality gate: Passed</p>
+        </div>
+    </footer>
+
+    <!-- Bug Alert Box (Hidden by default, shown when bug is injected) -->
+    <div class="bug-alert-card" id="bug-alert-card">
+        <div class="bug-alert-header">
+            <span class="bug-code">[BUG-042] layouts_shift</span>
+            <span class="bug-severity">CRITICAL</span>
+        </div>
+        <div class="bug-alert-body">
+            <p>Обнаружен критический дефект в основном потоке интерфейса! Сетка смещена, элементы деформированы.</p>
+            <button class="btn btn-hotfix" id="btn-run-hotfix">
+                <span class="spinner"></span>
+                Устранить баг (Run Hotfix)
+            </button>
+        </div>
+    </div>
+
+    <!-- Hotfix Loader Overlay (Hidden by default, shown during compile simulation) -->
+    <div class="hotfix-overlay" id="hotfix-overlay">
+        <div class="loader-content">
+            <span class="loader-spinner"></span>
+            <span class="loader-text" id="loader-status-text">Compiling hotfix...</span>
+        </div>
+    </div>
+
+    <!-- JavaScript code -->
+    <script src="script.js"></script>
+</body>
+</html>
