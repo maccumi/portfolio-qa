@@ -1,5 +1,5 @@
 /* ==========================================================================
-   STYLE.CSS - PREMIUM MONOCHROME QA PORTFOLIO
+   STYLE.CSS - PREMIUM MONOCHROME LIGHT RESUME (WARM CREAM & TERRACOTTA)
    ========================================================================== */
 
 :root {
@@ -8,25 +8,25 @@
     --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
-    /* Theme Variables - Dark Theme (Default) */
-    --bg: #0c0c0e;
-    --bg-elev: #131316;
-    --surface: #1a1a1e;
-    --surface-hover: #222227;
-    --border: #26262c;
-    --border-soft: #1d1d22;
-    --text: #f1f0ea;
-    --text-muted: #8a8a92;
-    --text-dim: #56565e;
+    /* Theme Variables - Warm Cream Paper (Default) */
+    --bg: #faf9f5;
+    --bg-elev: #f0ede5;
+    --surface: #ffffff;
+    --surface-hover: #fcfbfa;
+    --border: #d2cfc4;
+    --border-soft: #e5e3db;
+    --text: #1a1a1c;
+    --text-muted: #5c5a54;
+    --text-dim: #908e84;
     
-    /* Subtle QA lime accent for focus and high tech feel */
-    --accent: #b5ff5b;
-    --accent-soft: rgba(181, 255, 91, 0.1);
-    --accent-glow: rgba(181, 255, 91, 0.15);
+    /* Muted Pastel Terracotta Orange Accent */
+    --accent: #d46337;
+    --accent-soft: rgba(212, 99, 55, 0.08);
+    --accent-glow: rgba(212, 99, 55, 0.12);
     
-    --danger: #ff6b6b;
-    --danger-glow: rgba(255, 107, 107, 0.2);
-    --success: #b5ff5b;
+    --danger: #c53c3c;
+    --danger-glow: rgba(197, 60, 60, 0.15);
+    --success: #d46337;
 
     /* Layout & Spacing */
     --max-w: 1100px;
@@ -36,28 +36,6 @@
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 12px;
-}
-
-/* Light Theme overrides */
-html[data-theme="light"] {
-    --bg: #f5f4ee; /* Warm cream paper color */
-    --bg-elev: #ecebe3;
-    --surface: #ffffff;
-    --surface-hover: #fcfbfa;
-    --border: #d8d6cc;
-    --border-soft: #e3e1d7;
-    --text: #16161a;
-    --text-muted: #56565e;
-    --text-dim: #92929a;
-    
-    /* Dark green forest accent for light paper theme */
-    --accent: #1e5c12;
-    --accent-soft: rgba(30, 92, 18, 0.08);
-    --accent-glow: rgba(30, 92, 18, 0.12);
-    
-    --danger: #d32f2f;
-    --danger-glow: rgba(211, 47, 47, 0.15);
-    --success: #1e5c12;
 }
 
 /* Buggy Mode overrides (when user clicks "Inject Bug") */
@@ -101,7 +79,7 @@ body::before {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' filterRes='200'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.035;
+    opacity: 0.045;
     pointer-events: none;
     z-index: 9999;
 }
@@ -141,7 +119,7 @@ body:hover .cursor-glow {
 /* Selection */
 ::selection {
     background-color: var(--accent);
-    color: var(--bg);
+    color: #ffffff;
 }
 
 /* Links & Buttons reset */
@@ -158,7 +136,7 @@ nav {
     top: 0; left: 0; right: 0;
     z-index: 1000;
     padding: 16px var(--gutter);
-    background: color-mix(in srgb, var(--bg) 75%, transparent);
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-soft);
     transition: all 0.3s ease;
@@ -173,7 +151,7 @@ body.buggy-mode nav {
 nav.scrolled {
     padding: 12px var(--gutter);
     border-bottom-color: var(--border);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
 }
 
 .nav-inner {
@@ -216,7 +194,7 @@ nav.scrolled {
 
 @media (max-width: 800px) {
     .nav-links {
-        display: none; /* Mobile navigation simplified */
+        display: none;
     }
 }
 
@@ -243,43 +221,6 @@ nav.scrolled {
     content: '-> ';
     color: var(--accent);
 }
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-/* Buttons styling */
-.theme-toggle {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text);
-    cursor: pointer;
-    width: 38px;
-    height: 38px;
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-
-.theme-toggle:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-.theme-toggle svg {
-    width: 18px;
-    height: 18px;
-}
-
-/* Toggle icon display base on theme */
-html[data-theme="dark"] .sun-icon { display: block; }
-html[data-theme="dark"] .moon-icon { display: none; }
-html[data-theme="light"] .sun-icon { display: none; }
-html[data-theme="light"] .moon-icon { display: block; }
 
 .download-btn {
     font-family: var(--font-mono);
@@ -543,7 +484,7 @@ body.buggy-mode #hero-main-title {
 }
 
 .btn:hover {
-    color: var(--bg);
+    color: #ffffff;
     border-color: var(--accent);
 }
 
@@ -553,7 +494,7 @@ body.buggy-mode #hero-main-title {
 
 .btn-primary {
     background: var(--accent);
-    color: var(--bg);
+    color: #ffffff;
     border-color: var(--accent);
     font-weight: 500;
 }
@@ -563,7 +504,7 @@ body.buggy-mode #hero-main-title {
 }
 
 .btn-primary:hover {
-    color: var(--bg);
+    color: #ffffff;
     border-color: var(--text);
 }
 
@@ -607,7 +548,7 @@ body.buggy-mode #hero-main-title {
     background-color: var(--bg-elev);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
     overflow: hidden;
     font-family: var(--font-mono);
     transition: all 0.3s ease;
@@ -686,7 +627,7 @@ body.buggy-mode #hero-main-title {
 }
 
 .metric-value.status-active {
-    color: #10b981;
+    color: var(--accent);
 }
 
 .metric-value.status-buggy {
@@ -712,7 +653,7 @@ body.buggy-mode #hero-main-title {
 
 .btn-dashboard-action:hover {
     background-color: var(--accent);
-    color: var(--bg);
+    color: #ffffff;
 }
 
 /* ==========================================================================
@@ -880,6 +821,7 @@ body.buggy-mode #hero-main-title {
     border-radius: var(--radius-lg);
     overflow: hidden;
     margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 .inspector-header {
@@ -919,6 +861,45 @@ body.buggy-mode #hero-main-title {
     line-height: 1.6;
 }
 
+/* Soft Skills Box */
+.soft-skills-container {
+    border-top: 1px solid var(--border-soft);
+    padding-top: 30px;
+}
+
+.soft-skills-title {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    letter-spacing: 0.1em;
+}
+
+.soft-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.soft-tag-item {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 16px;
+    background-color: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    color: var(--text);
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.soft-tag-item:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
 /* ==========================================================================
    EXPERIENCE SECTION (TIMELINE)
    ========================================================================== */
@@ -927,7 +908,7 @@ body.buggy-mode #hero-main-title {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
@@ -978,32 +959,7 @@ body.buggy-mode #hero-main-title {
     font-family: var(--font-mono);
     font-size: 14px;
     font-weight: 600;
-    color: var(--text);
-}
-
-.timeline-period {
-    display: flex;
-    gap: 8px;
-}
-
-.badge {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 500;
-    padding: 3px 8px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-}
-
-.badge-date {
-    background-color: var(--surface);
-    color: var(--text-muted);
-}
-
-.badge-duration {
-    background-color: var(--accent-soft);
-    border-color: var(--accent);
-    color: var(--text);
+    color: var(--accent);
 }
 
 .timeline-details {
@@ -1016,11 +972,11 @@ body.buggy-mode #hero-main-title {
 
 .timeline-item:hover .timeline-details {
     border-color: var(--border);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.01);
 }
 
 .timeline-role {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 8px;
     color: var(--text);
@@ -1030,6 +986,21 @@ body.buggy-mode #hero-main-title {
     font-size: 14px;
     color: var(--text-muted);
     margin-bottom: 16px;
+}
+
+.sub-timeline-block {
+    margin-top: 20px;
+    border-top: 1px solid var(--border-soft);
+    padding-top: 16px;
+}
+
+.sub-block-title {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
 }
 
 .bullet-list {
@@ -1096,11 +1067,17 @@ body.buggy-mode #hero-main-title {
    ========================================================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 950px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -1110,10 +1087,10 @@ body.buggy-mode #hero-main-title {
     background-color: var(--surface);
     border: 1px solid var(--border-soft);
     border-radius: var(--radius-lg);
-    padding: 30px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1121,16 +1098,6 @@ body.buggy-mode #hero-main-title {
     border-color: var(--accent);
     transform: translateY(-4px);
     box-shadow: 0 12px 35px var(--accent-soft);
-}
-
-.project-card-wide {
-    grid-column: span 2;
-}
-
-@media (max-width: 850px) {
-    .project-card-wide {
-        grid-column: span 1;
-    }
 }
 
 .project-header {
@@ -1155,15 +1122,16 @@ body.buggy-mode #hero-main-title {
 }
 
 .project-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--text);
     line-height: 1.3;
 }
 
 .project-desc {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-muted);
+    line-height: 1.5;
 }
 
 .project-tasks {
@@ -1175,9 +1143,10 @@ body.buggy-mode #hero-main-title {
 
 .project-tasks li {
     position: relative;
-    padding-left: 16px;
-    font-size: 13px;
+    padding-left: 14px;
+    font-size: 12.5px;
     color: var(--text-muted);
+    line-height: 1.5;
 }
 
 .project-tasks li::before {
@@ -1218,146 +1187,12 @@ body.buggy-mode #hero-main-title {
 }
 
 /* ==========================================================================
-   SQL SANDBOX
-   ========================================================================== */
-.sql-sandbox {
-    background-color: var(--bg-elev);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    margin-top: 16px;
-    overflow: hidden;
-}
-
-.sandbox-controls {
-    padding: 16px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-
-.query-select-wrapper {
-    flex: 1;
-    min-width: 240px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.query-select-wrapper label {
-    font-size: 11px;
-    color: var(--text-dim);
-    font-family: var(--font-mono);
-}
-
-.query-select-wrapper select {
-    background-color: var(--surface);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 8px 12px;
-    font-family: var(--font-body);
-    font-size: 13px;
-    outline: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-.query-select-wrapper select:focus {
-    border-color: var(--accent);
-}
-
-.btn-sql-execute {
-    background-color: var(--accent);
-    color: var(--bg);
-    border-color: var(--accent);
-    font-weight: 600;
-    padding: 8px 16px;
-    height: 38px;
-}
-
-.btn-sql-execute:hover {
-    background-color: var(--text);
-    border-color: var(--text);
-    color: var(--bg);
-}
-
-.sandbox-editor {
-    background-color: var(--bg);
-    border-bottom: 1px solid var(--border);
-}
-
-.editor-header {
-    background-color: var(--surface);
-    padding: 6px 16px;
-    border-bottom: 1px solid var(--border-soft);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-dim);
-}
-
-.editor-code {
-    padding: 16px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--text);
-    overflow-x: auto;
-}
-
-.sandbox-results {
-    background-color: var(--bg-elev);
-}
-
-.results-header {
-    background-color: var(--surface);
-    padding: 6px 16px;
-    border-bottom: 1px solid var(--border-soft);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-dim);
-}
-
-.results-table-wrapper {
-    padding: 16px;
-    overflow-x: auto;
-    max-height: 250px;
-}
-
-.sql-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    text-align: left;
-}
-
-.sql-table th {
-    background-color: var(--surface);
-    color: var(--text);
-    font-weight: 500;
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-}
-
-.sql-table td {
-    padding: 8px 12px;
-    border: 1px solid var(--border-soft);
-    color: var(--text-muted);
-}
-
-.sql-table tr:hover {
-    background-color: var(--surface-hover);
-}
-
-/* ==========================================================================
    EDUCATION SECTION
    ========================================================================== */
 .edu-grid {
     display: grid;
     grid-template-columns: 1fr;
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
@@ -1373,13 +1208,6 @@ body.buggy-mode #hero-main-title {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
-}
-
-.edu-year {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
 }
 
 .badge-edu {
@@ -1545,7 +1373,7 @@ a.contact-item:hover {
     background-color: var(--bg-elev);
     border: 2px solid var(--danger);
     border-radius: var(--radius-lg);
-    box-shadow: 0 10px 40px rgba(255, 107, 107, 0.15);
+    box-shadow: 0 10px 40px rgba(197, 60, 60, 0.15);
     z-index: 5000;
     overflow: hidden;
     font-family: var(--font-mono);
@@ -1612,7 +1440,7 @@ a.contact-item:hover {
 .hotfix-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(12, 12, 14, 0.9);
+    background-color: rgba(26, 26, 28, 0.9);
     z-index: 10000;
     display: flex;
     justify-content: center;
@@ -1656,7 +1484,7 @@ a.contact-item:hover {
 /* Buggy Visual Shifts on page elements */
 body.buggy-mode .hero-title em {
     color: var(--danger);
-    text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
 }
 
 /* Buggy CSS glitches: slightly skewed columns, weird fonts, rotated grids */
@@ -1688,10 +1516,6 @@ body.buggy-mode .timeline::before {
     section {
         padding: 60px var(--gutter) 40px;
     }
-    
-    .nav-actions .download-btn {
-        display: none; /* Hide download on mobile navigation bar to save space */
-    }
 }
 
 /* ==========================================================================
@@ -1713,7 +1537,6 @@ body.buggy-mode .timeline::before {
     .hero-dashboard-wrapper,
     .scroll-hint,
     .skills-inspector,
-    .sql-sandbox,
     .bug-alert-card,
     .hotfix-overlay,
     .site-footer,
@@ -1725,16 +1548,16 @@ body.buggy-mode .timeline::before {
     }
 
     section {
-        padding: 1.5cm 0 1cm !important;
+        padding: 1.2cm 0 0.8cm !important;
         margin: 0 !important;
         max-width: 100% !important;
         page-break-inside: avoid !important;
     }
 
     .section-head {
-        margin-bottom: 20px !important;
+        margin-bottom: 15px !important;
         border-bottom: 2px solid #000000 !important;
-        padding-bottom: 5px !important;
+        padding-bottom: 4px !important;
     }
 
     .section-head .num,
@@ -1753,13 +1576,13 @@ body.buggy-mode .timeline::before {
     }
 
     .hero-title {
-        font-size: 28pt !important;
+        font-size: 26pt !important;
         line-height: 1.1 !important;
         margin-bottom: 10px !important;
     }
 
     .hero-subtitle {
-        font-size: 12pt !important;
+        font-size: 11pt !important;
         color: #000000 !important;
     }
 
@@ -1838,20 +1661,18 @@ body.buggy-mode .timeline::before {
     }
 
     .timeline-company {
-        font-size: 12pt !important;
+        font-size: 11pt !important;
         font-weight: bold !important;
-    }
-
-    .badge {
-        border: none !important;
-        font-size: 9pt !important;
-        padding: 0 !important;
         color: #000000 !important;
-        background: none !important;
     }
 
     .timeline-role {
-        font-size: 13pt !important;
+        font-size: 12pt !important;
+    }
+
+    .sub-timeline-block {
+        margin-top: 10px !important;
+        padding-top: 8px !important;
     }
 
     .bullet-list {
@@ -1859,7 +1680,7 @@ body.buggy-mode .timeline::before {
     }
 
     .bullet-list li {
-        font-size: 10pt !important;
+        font-size: 9.5pt !important;
         color: #000000 !important;
     }
 
@@ -1886,16 +1707,12 @@ body.buggy-mode .timeline::before {
         background-color: #ffffff !important;
     }
 
-    .project-card-wide {
-        grid-column: span 1 !important;
-    }
-
     .project-title {
-        font-size: 13pt !important;
+        font-size: 12pt !important;
     }
 
     .project-desc, .project-tasks li {
-        font-size: 10pt !important;
+        font-size: 9.5pt !important;
         color: #000000 !important;
     }
 
@@ -1906,7 +1723,7 @@ body.buggy-mode .timeline::before {
     }
 
     .edu-institution {
-        font-size: 14pt !important;
+        font-size: 13pt !important;
     }
 
     .contacts-grid-wrapper {
