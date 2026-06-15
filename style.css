@@ -1,10 +1,10 @@
 /* ==========================================================================
-   STYLE.CSS - PREMIUM MONOCHROME LIGHT RESUME (WARM CREAM & TERRACOTTA)
+   STYLE.CSS - PREMIUM MONOCHROME RESUME (SPACE GROTESK & WARM CREAM & ORANGE)
    ========================================================================== */
 
 :root {
-    /* Fonts */
-    --font-display: 'Instrument Serif', 'Times New Roman', serif;
+    /* Fonts - Replaced serif with premium tech sans-serif 'Space Grotesk' */
+    --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
     --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
@@ -214,11 +214,12 @@ nav.scrolled {
 
 .nav-link.active {
     color: var(--accent);
-    font-weight: 500;
+    font-weight: 600;
 }
 
+/* Active navigation indicator arrow (translates to active section automatically) */
 .nav-link.active::before {
-    content: '-> ';
+    content: '→ ';
     color: var(--accent);
 }
 
@@ -271,16 +272,17 @@ section {
 
 .section-head h2 {
     font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(32px, 6vw, 56px);
+    font-weight: 600;
+    font-size: clamp(30px, 5.5vw, 48px);
     letter-spacing: -0.02em;
-    line-height: 1;
+    line-height: 1.1;
+    text-transform: uppercase;
 }
 
 .section-head h2 em {
     font-style: italic;
     color: var(--accent);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .section-head .head-line {
@@ -366,16 +368,17 @@ section {
 
 .hero-title {
     font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(52px, 10vw, 110px);
-    line-height: 0.9;
+    font-weight: 700;
+    font-size: clamp(48px, 9vw, 96px);
+    line-height: 0.95;
     letter-spacing: -0.04em;
     margin-bottom: 24px;
+    text-transform: uppercase;
 }
 
 .hero-title em {
     font-style: italic;
-    font-weight: 300;
+    font-weight: 500;
     color: var(--accent);
 }
 
@@ -724,6 +727,7 @@ body.buggy-mode #hero-main-title {
     font-size: 36px;
     line-height: 1;
     color: var(--accent);
+    font-weight: 700;
 }
 
 .stat-label {
@@ -821,7 +825,6 @@ body.buggy-mode #hero-main-title {
     border-radius: var(--radius-lg);
     overflow: hidden;
     margin-top: 30px;
-    margin-bottom: 40px;
 }
 
 .inspector-header {
@@ -859,45 +862,6 @@ body.buggy-mode #hero-main-title {
     font-size: 13px;
     color: var(--text-muted);
     line-height: 1.6;
-}
-
-/* Soft Skills Box */
-.soft-skills-container {
-    border-top: 1px solid var(--border-soft);
-    padding-top: 30px;
-}
-
-.soft-skills-title {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 16px;
-    letter-spacing: 0.1em;
-}
-
-.soft-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.soft-tag-item {
-    font-size: 13px;
-    font-weight: 500;
-    padding: 8px 16px;
-    background-color: var(--surface);
-    border: 1px solid var(--border-soft);
-    border-radius: var(--radius-md);
-    color: var(--text);
-    transition: all 0.2s ease;
-    cursor: default;
-}
-
-.soft-tag-item:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-1px);
 }
 
 /* ==========================================================================
