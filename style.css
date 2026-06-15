@@ -140,7 +140,8 @@ nav.scrolled {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
 }
 
 .logo {
@@ -151,6 +152,8 @@ nav.scrolled {
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.05em;
+    position: absolute;
+    left: 0;
 }
 
 .logo-dot {
