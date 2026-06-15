@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SCRIPT.JS - PORTFOLIO INTERACTIVITY & QA EMULATION (LIGHT THEME)
+   SCRIPT.JS - PORTFOLIO INTERACTIVITY & QA EMULATION (REVISION 3)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       2. SCROLL PROGRESS & STICKY NAVBAR
+       2. SCROLL PROGRESS & STICKY NAVBAR & SCROLLSPY (PHOTO 5)
        ========================================================================== */
     const scrollProgress = document.getElementById('scroll-progress');
     const navbar = document.getElementById('navbar');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
 
     window.addEventListener('scroll', () => {
         // Scroll Progress
@@ -33,6 +35,38 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+
+        // Active Navigation link on scroll spy (Photo 5)
+        let scrollPos = window.scrollY || document.documentElement.scrollTop;
+        let windowHeight = window.innerHeight;
+        let docHeight = document.documentElement.scrollHeight;
+        
+        let activeId = '';
+        
+        // If at the very bottom, prioritize contacts section
+        if (scrollPos + windowHeight >= docHeight - 20) {
+            activeId = 'contacts';
+        } else {
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 120; // 120px offset for navbar padding
+                const bottom = top + sec.offsetHeight;
+                const id = sec.getAttribute('id');
+                
+                if (scrollPos >= top && scrollPos < bottom) {
+                    activeId = id;
+                }
+            });
+        }
+        
+        if (activeId) {
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${activeId}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
         }
     });
 
@@ -55,33 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealObserver.observe(el));
 
     /* ==========================================================================
-       4. ACTIVE NAVIGATION LINKS (SCROLLSPY)
-       ========================================================================== */
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    const scrollSpyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
-        });
-    }, {
-        threshold: 0.3,
-        rootMargin: '-20% 0px -60% 0px'
-    });
-
-    sections.forEach(sec => scrollSpyObserver.observe(sec));
-
-    /* ==========================================================================
-       5. INTERACTIVE SKILLS INSPECTOR (SKILL MAP)
+       4. INTERACTIVE SKILLS INSPECTOR (SKILL MAP & PHOTO 3)
        ========================================================================== */
     const skillInspector = document.getElementById('skills-inspector');
     const inspectorTitle = document.getElementById('inspector-skill-title');
@@ -139,31 +147,31 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Git (Система контроля версий)',
             desc: 'Базовая работа с ветками, коммитами, пулл-реквестами (Pull Requests). Клонирование репозиториев, разрешение конфликтов слияния.'
         },
+        'linux': {
+            title: 'Linux basics',
+            desc: 'Базовая навигация по файловой системе через CLI (cd, ls, mkdir), чтение логов серверов в реальном времени с помощью cat, tail -f, grep, просмотр запущенных процессов.'
+        },
+
+        // Technical & 3D Engineering Category (Photo 3)
+        '3d_modeling': {
+            title: '3D Modeling & Slicing (3D-моделирование и подготовка печати)',
+            desc: 'Профессиональное моделирование деталей в CAD-системах, подготовка к производству и слайсинг моделей в Orca Slicer и Cura. Оптимизация параметров печати (высота слоев, заполнение, поддержки) под различные виды пластиков.'
+        },
+        'firmware': {
+            title: 'Firmware Setup & Validation (Прошивка и калибровка оборудования)',
+            desc: 'Настройка, прошивка и верификация стабильности ПО управляющих плат 3D-принтеров (Klipper, Marlin). Тестирование стабильности прошивок под длительной нагрузкой, калибровка кинематики и термоэлементов.'
+        },
+        'grasshopper': {
+            title: 'Grasshopper Automation (Автоматизация в Grasshopper)',
+            desc: 'Создание скриптов визуального программирования в Rhinoceros + Grasshopper для параметрической автоматизации генерации геометрии. Автоматизация раскладки деталей на печать и управления тестовыми данными (TDM).'
+        },
         'sql_tool': {
             title: 'SQL (Structured Query Language)',
             desc: 'Написание запросов к базам данных для сверки данных. Использование операторов JOIN, фильтрации WHERE, группировки GROUP BY, агрегатных функций (COUNT, SUM) для валидации бэкенда.'
         },
-
-        // Technical Category
         'html_css': {
             title: 'HTML & CSS',
             desc: 'Понимание разметки и стилей веб-страниц. Позволяет быстро определять локализацию визуальных багов (в стилях CSS или в коде HTML) и проверять валидность верстки.'
-        },
-        'js_basics': {
-            title: 'JavaScript basics',
-            desc: 'Основы программирования. Понимание циклов, условий, объектов и асинхронных функций. Используется для написания скриптов автоматизации проверок в Postman и простых UI-скриптов.'
-        },
-        'rest_api': {
-            title: 'REST API Architecture',
-            desc: 'Понимание принципов архитектурного стиля REST (клиент-сервер, отсутствие состояния, кэширование, HTTP-методы, статус-коды, форматы данных JSON/XML).'
-        },
-        'sql_queries': {
-            title: 'SQL queries validation',
-            desc: 'Практическое применение SQL для проверки транзакций, соответствия данных в личных кабинетах пользователей и БД, чистки тестовых данных перед прогонами.'
-        },
-        'linux': {
-            title: 'Linux basics',
-            desc: 'Базовая навигация по файловой системе через CLI (cd, ls, mkdir), чтение логов серверов в реальном времени с помощью cat, tail -f, grep, просмотр запущенных процессов.'
         }
     };
 
