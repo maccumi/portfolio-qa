@@ -1,9 +1,9 @@
 /* ==========================================================================
-   STYLE.CSS - PREMIUM MONOCHROME RESUME (SPACE GROTESK & WARM CREAM & ORANGE)
+   STYLE.CSS - PREMIUM MONOCHROME RESUME (REVISION 4 - LIGHT PAPER)
    ========================================================================== */
 
 :root {
-    /* Fonts - Replaced serif with premium tech sans-serif 'Space Grotesk' */
+    /* Fonts */
     --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
     --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
@@ -95,25 +95,6 @@ body::before {
     z-index: 10000;
     transition: width 0.1s linear, background-color 0.3s ease;
     box-shadow: 0 0 10px var(--accent);
-}
-
-/* Cursor Glow Trail */
-.cursor-glow {
-    position: fixed;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    filter: blur(30px);
-}
-
-body:hover .cursor-glow {
-    opacity: 1;
 }
 
 /* Selection */
@@ -217,27 +198,10 @@ nav.scrolled {
     font-weight: 600;
 }
 
-/* Active navigation indicator arrow (translates to active section automatically) */
+/* Active navigation indicator arrow */
 .nav-link.active::before {
     content: '→ ';
     color: var(--accent);
-}
-
-.download-btn {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 500;
-    padding: 9px 16px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface);
-    transition: all 0.2s ease;
-}
-
-.download-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-1px);
 }
 
 /* ==========================================================================
@@ -559,7 +523,6 @@ body.buggy-mode #hero-main-title {
 
 .qa-dashboard:hover {
     border-color: var(--accent);
-    box-shadow: 0 10px 40px var(--accent-soft);
 }
 
 .dashboard-header {
@@ -907,7 +870,6 @@ body.buggy-mode #hero-main-title {
 .timeline-item:hover .timeline-dot {
     border-color: var(--accent);
     background-color: var(--accent);
-    box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 .timeline-header {
@@ -1105,49 +1067,24 @@ body.buggy-mode #hero-main-title {
     gap: 8px;
 }
 
+/* Bullet list task item with proper padding offset (Photo 3) */
 .project-tasks li {
     position: relative;
-    padding-left: 14px;
+    padding-left: 24px;
     font-size: 12.5px;
     color: var(--text-muted);
     line-height: 1.5;
 }
 
+/* Bullet arrow centered and padded (Photo 3) */
 .project-tasks li::before {
-    content: "->";
+    content: "→";
     position: absolute;
     left: 0;
-    color: var(--text-dim);
-    font-family: var(--font-mono);
-}
-
-.project-links {
-    margin-top: auto;
-    display: flex;
-    border-top: 1px solid var(--border-soft);
-    padding-top: 16px;
-}
-
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--text);
-    transition: color 0.2s ease;
-}
-
-.project-link:hover {
+    top: 1px;
     color: var(--accent);
-}
-
-.link-icon {
-    transition: transform 0.2s ease;
-}
-
-.project-link:hover .link-icon {
-    transform: translateY(-1px) translateX(1px);
+    font-family: var(--font-mono);
+    font-weight: bold;
 }
 
 /* ==========================================================================
@@ -1494,7 +1431,6 @@ body.buggy-mode .timeline::before {
     }
 
     body::before,
-    .cursor-glow,
     .scroll-progress,
     nav,
     .hero-cta,
